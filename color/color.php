@@ -4,39 +4,35 @@ class ColorField extends InputField{
 
   static public $assets = array(
     'js' => array(
-      'minicolors.js',
+      'spectrum.js',
     ),
     'css' => array(
-      'minicolors.css',
+      'spectrum.css',
     )
   );
 
 
-  public function __construct() {
-    $this->type        = 'color';
-    $this->icon        = 'paint-brush';
-  }
-
-
-  public function input() {    
+  public function input() {
 
     $color = new Brick('input');
     $color->addClass('colorpicker');
     $color->attr(array(
-      'name'         => $this->name(),
-      'id'           => $this->id(),
-      'type'           =>"text",
-      'value'		 => $this->value(),
+      'name'  => $this->name(),
+      'id'    => $this->id(),
+      'type'  => "text",
+      'value' => $this->value(),
     ));
 
-    $color->append($this->option('', '', $this->value() == ''));   
-    
+    $color->append($this->option('', '', $this->value() == ''));
+
     $wrapper = new Brick('div');
     $wrapper->addClass('input color-wrapper');
     $wrapper->append($color);
 
-    return $color;
-    
+    $script = '<script> $("#' . $color->attr('id') .'").spectrum(); </script>';
+
+    return $color . $script;
+
   }
 
 
