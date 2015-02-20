@@ -11,7 +11,6 @@ class ColorField extends InputField{
     )
   );
 
-
   public function input() {
 
     $color = new Brick('input');
@@ -23,17 +22,12 @@ class ColorField extends InputField{
       'value' => $this->value(),
     ));
 
-    $color->append($this->option('', '', $this->value() == ''));
-
     $wrapper = new Brick('div');
     $wrapper->addClass('input color-wrapper');
     $wrapper->append($color);
 
-    $script = '<script> $("#' . $color->attr('id') .'").spectrum(); </script>';
-
-    return $color . $script;
+    return $color;
 
   }
-
 
 }

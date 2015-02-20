@@ -2300,3 +2300,22 @@
     });
 
 });
+
+(function ($) {
+    $(document).ready(function() {
+
+        if (app && typeof app == 'object') {
+            $(app.main).on('view:load', function () {
+
+                var $colorpicker = $('.colorpicker');
+
+                if ($colorpicker.length) {
+                    $colorpicker.spectrum();
+                }
+
+            });
+        }
+
+    });
+} (jQuery));
+
