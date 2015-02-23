@@ -22,3 +22,14 @@ Thanks to [@claviska](https://github.com/claviska) for his great MiniColors plug
 Also thanks to [@ptouch718](https://github.com/ptouch718) for his masterful JS debugging.
 
 And of course the original author I forked, [@ian-cox](https://github.com/ian-cox), for having superior field template code than my original field example did.
+
+
+## Customizing settings or the predefined palette options
+
+To adjust the settings you can open up `site/fields/color/assets/js/spectrum.js`.
+
+The options start on line 30.
+
+The palette options start on line 58.
+
+You can read me about the options (link: http://bgrins.github.io/spectrum/#options text: here).
